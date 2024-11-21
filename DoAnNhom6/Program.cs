@@ -40,26 +40,3 @@ app.Run();
 
 
 
-//Thi?t l?p  môi tr??ng k?t n?i c? s? d? li?u cho t?ng máy
-public class Startup
-{
-    public IConfiguration Configuration { get; }
-    public Startup(IConfiguration configuration)
-    {
-        Configuration = configuration;
-    }
-
-    public void ConfigureServices(IServiceCollection services)
-    {
-        // ??c chu?i k?t n?i t? file c?u hình ho?c bi?n môi tr??ng
-        var connectionString = Configuration.GetConnectionString("DefaultConnection")
-            ?? Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING");
-
-        services.AddDbContext<DoAnNhom6Context>(options =>
-            options.UseSqlServer(connectionString));
-
-        // Các c?u hình d?ch v? khác...
-    }
-
-    // Các ph??ng th?c c?u hình khác...
-}
