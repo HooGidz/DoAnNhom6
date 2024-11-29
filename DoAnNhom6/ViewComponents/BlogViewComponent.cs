@@ -15,6 +15,7 @@ namespace DoAnNhom6.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var items = await _context.TblBlogs
+                .Include(m => m.Category)
                 .Where(m => m.IsActive)
                 .OrderBy(m => m.BlogId)
                 .Take(2)

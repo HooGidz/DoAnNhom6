@@ -1,5 +1,6 @@
 using DoAnNhom6.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace DoAnNhom6.Controllers
@@ -9,13 +10,17 @@ namespace DoAnNhom6.Controllers
 		private readonly DoAnNhom6Context _context;
 		private readonly ILogger<HomeController> _logger;
 
+<<<<<<< HEAD
 		public HomeController(DoAnNhom6Context context, ILogger<HomeController> logger)
+=======
+        public HomeController(ILogger<HomeController> logger)
+>>>>>>> dba0d90f3e66eb184d996336070966e8702da3c3
 		{
 			_context = context;
 			_logger = logger;
 		}
 
-		public IActionResult Index()
+        public IActionResult Index()
 		{
 			ViewBag.productCategories = _context.TblProductCategories.ToList();
 			ViewBag.productNew = _context.TblProducts.Where(m=>m.IsNew).ToList();
@@ -37,5 +42,5 @@ namespace DoAnNhom6.Controllers
 		{
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
-	}
+    }
 }
