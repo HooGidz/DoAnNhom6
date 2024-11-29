@@ -58,7 +58,9 @@ namespace DoAnNhom6.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 tblMenu.Alias = DoAnNhom6.Utilities.Function.TitleSlugGenerationAlias(tblMenu.Alias);
+
                 _context.Add(tblMenu);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

@@ -6,6 +6,7 @@ namespace DoAnNhom6.Models;
 
 public partial class DoAnNhom6Context : DbContext
 {
+
     public DoAnNhom6Context()
     {
     }

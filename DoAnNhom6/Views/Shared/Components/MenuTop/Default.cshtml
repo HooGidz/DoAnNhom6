@@ -1,26 +1,5 @@
 ﻿@model IEnumerable<DoAnNhom6.Models.TblMenu>
 @foreach (var item in Model)
 {
-    if (item.Name == "Blog")
-    {
-        <div class="nav-item dropdown">
-            <a href="/@item.Alias" class="nav-link dropdown-toggle" data-toggle="dropdown">@item.Name</a>
-            <div class="dropdown-menu">
-                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                <a href="single.html" class="dropdown-item">Blog Detail</a>
-            </div>
-        </div>
-    }
-    else
-    {
-        <a href="/@item.Alias" class="nav-item nav-link ">@item.Name</a>
-        @* <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-            <div class="dropdown-menu">
-                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                <a href="single.html" class="dropdown-item">Blog Detail</a>
-            </div>
-        </div> *@
-    }
-    
+    <a href="/@item.Alias" class="nav-item nav-link ">@item.Name</a>
 }
