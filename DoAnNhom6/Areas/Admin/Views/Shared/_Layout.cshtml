@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="~/admin/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
     <link href="~/admin/css/style.css" rel="stylesheet">
-
+    <script src="~/admin/plugins/jquery/jquery.min.js"></script>
+    <script src="~/admin/plugins/jqueryui/css/jquery-ui.min.css"></script>
 </head>
 
 <body>
@@ -225,12 +226,13 @@
                                             </a>
                                         </li>
 
-                                        <hr class="my-2">
+                                        
                                         <li>
                                             <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
                                         </li>
                                         <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
+                                    <hr class="my-2">
                                 </div>
                             </div>
                         </li>
@@ -451,7 +453,7 @@
 
 
     <script src="~/admin/js/dashboard/dashboard-1.js"></script>
-
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>

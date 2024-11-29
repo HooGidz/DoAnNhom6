@@ -48,7 +48,12 @@ namespace DoAnNhom6.Areas.Admin.Controllers
         // GET: Admin/Products/Create
         public IActionResult Create()
         {
+
+            ViewData["CategoryId"] = new
+                SelectList(_context.TblProductCategories, "CategoryId", "Title");
+
             ViewData["CategoryId"] = new SelectList(_context.TblProductCategories, "CategoryId", "CategoryId");
+
             return View();
         }
 
@@ -61,11 +66,19 @@ namespace DoAnNhom6.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                tblProduct.Alias = DoAnNhom6.Utilities.Function.TitleSlugGenerationAlias(tblProduct.Alias);
+
                 _context.Add(tblProduct);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            ViewData["CategoryId"] = new 
+                SelectList(_context.TblProductCategories, "CategoryId", "CategoryId", tblProduct.CategoryId);
+
             ViewData["CategoryId"] = new SelectList(_context.TblProductCategories, "CategoryId", "CategoryId", tblProduct.CategoryId);
+
             return View(tblProduct);
         }
 
@@ -82,7 +95,11 @@ namespace DoAnNhom6.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+
+            ViewData["CategoryId"] = new SelectList(_context.TblProductCategories, "CategoryId", "Title", tblProduct.CategoryId);
+
             ViewData["CategoryId"] = new SelectList(_context.TblProductCategories, "CategoryId", "CategoryId", tblProduct.CategoryId);
+
             return View(tblProduct);
         }
 
