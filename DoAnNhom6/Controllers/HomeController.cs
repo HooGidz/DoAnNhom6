@@ -1,5 +1,6 @@
 using DoAnNhom6.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace DoAnNhom6.Controllers
@@ -8,12 +9,12 @@ namespace DoAnNhom6.Controllers
 	{
 		private readonly ILogger<HomeController> _logger;
 
-		public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger)
 		{
 			_logger = logger;
 		}
 
-		public IActionResult Index()
+        public IActionResult Index()
 		{
 			return View();
 		}
@@ -28,5 +29,5 @@ namespace DoAnNhom6.Controllers
 		{
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
-	}
+    }
 }

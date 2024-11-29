@@ -67,9 +67,15 @@ namespace DoAnNhom6.Controllers
 
             return View(blog);
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var blog = await _context.TblBlogs
+                .Include(b => b.Category) // Nối bảng Category
+                .Where(b => b.IsActive) // Lọc các bài viết hoạt động
+                .ToListAsync();
+
+            return View(blog);
         }
+
     }
 }
