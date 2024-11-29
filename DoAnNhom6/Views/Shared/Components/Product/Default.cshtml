@@ -1,96 +1,19 @@
 ﻿@model IEnumerable<DoAnNhom6.Models.TblProduct>
-<<<<<<< HEAD
-@{
-    List<TblProductCategory> productCategories = ViewBag.productCategories;
-    List<TblProduct> productNew = ViewBag.productNew;
-}
-
-<div class="tab-content">
-    <div id="mon-an-vat" class="container tab-pane active">
-        <div class="row">
-            <div class="col-lg-7 col-md-12">
-                @foreach (var item in Model)
-                {
-                    <div id="mon-an-vat" class="menu-item">
-                        <div class="menu-img">
-                            <img src="@item.Image" alt="Image">
-                        </div>
-                        <div class="menu-text">
-                            <h3><span>@item.Name</span> <strong>@item.Price</strong></h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
-                        </div>
-                    </div>
-                }
-                
-            </div>
-            <div class="col-lg-5 d-none d-lg-block">
-                <img src="img/menu-burger-img.jpg" alt="Image">
-            </div>
-        </div>
-    </div>
-    <div id="ga-ran" class="container tab-pane ">
-        <div class="row">
-            <div class="col-lg-7 col-md-12">
-                
-                    @foreach (var item in Model)
-                    {
-                        <div id="ga-ran" class="menu-item">
-                            <div class="menu-img">
-                                <img src="@item.Image" alt="Image">
-                            </div>
-                            <div class="menu-text">
-                                <h3><span>@item.Name</span> <strong>@item.Price</strong></h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
-                            </div>
-                        </div>
-                    }
-                
-                
-            </div>
-            <div class="col-lg-5 d-none d-lg-block">
-                <img src="img/menu-snack-img.jpg" alt="Image">
-            </div>
-        </div>
-    </div>
-    <div id="pizza" class="container tab-pane">
-        <div class="row">
-            <div class="col-lg-7 col-md-12">
-                @foreach (var item in Model)
-                {
-                    <div id="pizza" class="menu-item">
-                        <div class="menu-img">
-                            <img src="@item.Image" alt="Image">
-                        </div>
-                        <div class="menu-text">
-                            <h3><span>@item.Name</span> <strong>@item.Price</strong></h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
-                        </div>
-                    </div>
-                }
-                
-            </div>
-            <div class="col-lg-5 d-none d-lg-block">
-                <img src="img/menu-beverage-img.jpg" alt="Image">
-            </div>
-        </div>
-    </div>
-=======
 <div class="col-lg-7 col-md-12">
-@foreach (var item in Model)
-{
-    string sUrl = $"/blog/{item.Alias}-{item.ProductId}.html";
+    @foreach (var item in Model)
+    {
+        string sUrl = $"/blog/{item.Alias}-{item.ProductId}.html";
 
-    <div class="menu-item">
-        <div class="menu-img">
-            <img src="@item.Image" alt="Image">
+        <div class="menu-item">
+            <div class="menu-img">
+                <img src="@item.Image" alt="Image">
+            </div>
+            <div class="menu-text">
+                <h3><span>@item.Name</span> <strong>@item.Price VND</strong></h3>
+            </div>
         </div>
-        <div class="menu-text">
-            <h3><span>@item.Name</span> <strong>@item.Price VND</strong></h3>
-        </div>
-    </div>
-}
+    }
 </div>
 <div class="col-lg-5 d-none d-lg-block">
     <img src="~/img/menu-burger-img.jpg" alt="Image">
->>>>>>> dba0d90f3e66eb184d996336070966e8702da3c3
 </div>

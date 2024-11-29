@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-@{
-    List<TblProductCategory> productCategories = ViewBag.productCategories;
-    List<TblProduct> productNew = ViewBag.productNew;
-
-}
-=======
->>>>>>> dba0d90f3e66eb184d996336070966e8702da3c3
 
 <div class="carousel">
     <div class="container-fluid">
@@ -367,21 +359,7 @@
             <h2>Menu</h2>
         </div>
         <div class="menu-tab">
-<<<<<<< HEAD
-           
-                <ul class="nav nav-pills justify-content-center">
-                @foreach (var item in productCategories.Where(i => (bool)i.IsActive))
-                {
-                    <li class="nav-item">
-                        <a id="@item.Alias-tab" class="nav-link active" data-toggle="tab" href="#@item.Alias" role="tab">@item.Name</a>
-                    </li>
-                }
-            </ul>
-            
-        </div>
-        <div class="tab-content">
-            @await Component.InvokeAsync("Product") 
-=======
+
             <ul class="nav nav-pills justify-content-center">
                 
                 @foreach (var categoryid in new [] {11,1,2,3,4,5})
@@ -427,7 +405,7 @@
                     </div>
                 }
             </div>
->>>>>>> dba0d90f3e66eb184d996336070966e8702da3c3
+
         </div>
 
     </div>
