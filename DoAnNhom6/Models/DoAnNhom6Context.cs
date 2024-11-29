@@ -6,6 +6,7 @@ namespace DoAnNhom6.Models;
 
 public partial class DoAnNhom6Context : DbContext
 {
+
     public DoAnNhom6Context()
     {
     }
@@ -118,17 +119,14 @@ public partial class DoAnNhom6Context : DbContext
 
         modelBuilder.Entity<TblMenu>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("tbl_Menu");
+            entity.HasKey(e => e.MenuId);
+            entity.ToTable("tbl_Menu");
 
             entity.Property(e => e.Alias).HasMaxLength(150);
             entity.Property(e => e.CreatedBy).HasMaxLength(150);
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.Description).HasMaxLength(500);
-            entity.Property(e => e.MenuId)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("Menu_ID");
+            entity.Property(e => e.MenuId).HasColumnName("Menu_ID");
             entity.Property(e => e.ModifiedBy).HasMaxLength(150);
             entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
             entity.Property(e => e.Name).HasMaxLength(150);

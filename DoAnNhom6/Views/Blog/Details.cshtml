@@ -1,0 +1,374 @@
+﻿@model TblBlog
+@{
+    List<TblBlogComment> blogComment = ViewBag.blogComment;
+    List<TblBlog> relatedBlog = ViewBag.relatedBlog;
+    List<TblBlog> recentBlog = ViewBag.recentBlog;
+    List<TblBlog> popularBlog = ViewBag.popularBlog;
+    List<TblProductCategory> categoryBlog = ViewBag.categoryBlog;
+
+}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Bài viết</h2>
+            </div>
+            <div class="col-12">
+                <a href="">Trang chủ</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Single Post Start-->
+<div class="single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="single-content">
+                    <img src="@Model.Image" />
+                    <h2>@Model.Title</h2>
+                    <p>
+                        @Html.Raw(Model.Detail)
+                        @Model.Description
+                    </p>
+                    
+                </div>
+                <div class="single-tags">
+                    @if (ViewBag.categoryBlog != null)
+                    {
+                        <a>@Model.Category.Name</a>
+                    }
+                </div>
+                <div class="single-bio">
+                    <div class="single-bio-img">
+                        <img src="@Model.User.Avatar" />
+                    </div>
+                    <div class="single-bio-text">
+                        <h3>@Model.User.FullName</h3>
+                        <p>
+                            @Model.Description
+                        </p>
+                    </div>
+                </div>
+                <!--Bài viết liên quan-->
+                <div class="single-related">
+                    <h2>Bài viết liên quan</h2>
+                    <div class="owl-carousel related-slider">
+                        @foreach (var item in relatedBlog)
+                        {
+                            <div class="post-item">
+                                <div class="post-img">
+                                    <img src="@item.Image" />
+                                </div>
+                                <div class="post-text">
+                                    <a href="">@item.Title</a>
+                                    <div class="post-meta">
+                                        <p>By<a href="">@item.CreatedBy</a></p>
+                                        <p>In<a href="">Web Design</a></p>
+                                    </div>
+							    </div>
+						    </div>
+
+                        }
+                    </div>
+                </div>
+                <!--Comments-->
+                <div class="single-comment">
+                    <h2>@blogComment.Count() Bình luận</h2>
+                    <ul class="comment-list">
+                        @foreach (var item in blogComment)
+                        {
+                            <li class="comment-item">
+                                <div class="comment-body">
+                                    <div class="comment-img">
+                                        <img src="/img/user/admin-1.jpg" />
+                                    </div>
+                                    <div class="comment-text">
+                                        <h3><a href="">@item.Name</a></h3>
+                                        <span>@item.CreatedDate.Value.ToString("dd/MM/yyyy") at @item.CreatedDate.Value.ToString("hh:mm tt")</span>
+                                        <p>
+                                            @item.Detail
+                                        </p>
+                                        <a class="btn" href="">Reply</a>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        
+                    </ul>
+                </div>
+                <!--Thêm bình luận-->
+                <div class="comment-form">
+                    <h2>Bình luận của bạn</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Họ tên *</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">SĐT *</label>
+                            <input type="tel" class="form-control" id="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Bình luận *</label>
+                            <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Đăng bình luận" class="btn custom-btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <div class="search-widget">
+                            <form>
+                                <input class="form-control" type="text" placeholder="Tìm kiếm">
+                                <button class="btn"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <!--Bài viết gần đây-->
+                    <div class="sidebar-widget">
+                        <h2 class="widget-title">Bài viết gần đây</h2>
+                        <div class="recent-post">
+                            @foreach (var item in recentBlog)
+                            {
+                                <div class="post-item">
+                                    <div class="post-img">
+                                        <img src="@item.Image" />
+                                    </div>
+                                    <div class="post-text">
+                                        <a href="">@item.Title</a>
+                                        <div class="post-meta">
+                                            <p>By<a href="">@item.CreatedBy</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <div class="image-widget">
+                            <a href="#"><img src="/img/blog/blog-1.jpg" alt="Image"></a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <div class="tab-post">
+                            <ul class="nav nav-pills nav-justified">
+                                @* <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="pill" href="#featured"></a>
+                                </li> *@
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#popular">Phổ biến</a>
+                                </li>
+                                @* <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#latest"></a>
+                                </li> *@
+                            </ul>
+
+                            <div class="tab-content">
+                                <!--feature-->
+                                @* <div id="featured" class="container tab-pane active">
+                                    <div class="post-item">
+                                        <div class="post-img">
+                                            <img src="img/post-1.jpg" />
+                                        </div>
+                                        <div class="post-text">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                            <div class="post-meta">
+                                                <p>By<a href="">Admin</a></p>
+                                                <p>In<a href="">Web Design</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-item">
+                                        <div class="post-img">
+                                            <img src="img/post-2.jpg" />
+                                        </div>
+                                        <div class="post-text">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                            <div class="post-meta">
+                                                <p>By<a href="">Admin</a></p>
+                                                <p>In<a href="">Web Design</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-item">
+                                        <div class="post-img">
+                                            <img src="img/post-3.jpg" />
+                                        </div>
+                                        <div class="post-text">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                            <div class="post-meta">
+                                                <p>By<a href="">Admin</a></p>
+                                                <p>In<a href="">Web Design</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-item">
+                                        <div class="post-img">
+                                            <img src="img/post-4.jpg" />
+                                        </div>
+                                        <div class="post-text">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                            <div class="post-meta">
+                                                <p>By<a href="">Admin</a></p>
+                                                <p>In<a href="">Web Design</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-item">
+                                        <div class="post-img">
+                                            <img src="img/post-5.jpg" />
+                                        </div>
+                                        <div class="post-text">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                            <div class="post-meta">
+                                                <p>By<a href="">Admin</a></p>
+                                                <p>In<a href="">Web Design</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> *@
+                                <!--popular-->
+                                <div id="popular" class="container tab-pane active">
+                                    @foreach (var item in popularBlog)
+                                    {
+                                        <div class="post-item">
+                                            <div class="post-img">
+                                                <img src="@item.Image" />
+                                            </div>
+                                            <div class="post-text">
+                                                <a href="">@item.Title</a>
+                                                <div class="post-meta">
+                                                    <p>By<a href="">@item.CreatedBy</a></p>
+                                                    @* <p>In<a href="">Web Design</a></p> *@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                                <!--Lastest-->
+                                @* <div id="latest" class="container tab-pane fade">
+                                    <div class="post-item">
+                                        <div class="post-img">
+                                            <img src="img/post-1.jpg" />
+                                        </div>
+                                        <div class="post-text">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                            <div class="post-meta">
+                                                <p>By<a href="">Admin</a></p>
+                                                <p>In<a href="">Web Design</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-item">
+                                        <div class="post-img">
+                                            <img src="img/post-2.jpg" />
+                                        </div>
+                                        <div class="post-text">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                            <div class="post-meta">
+                                                <p>By<a href="">Admin</a></p>
+                                                <p>In<a href="">Web Design</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-item">
+                                        <div class="post-img">
+                                            <img src="img/post-3.jpg" />
+                                        </div>
+                                        <div class="post-text">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                            <div class="post-meta">
+                                                <p>By<a href="">Admin</a></p>
+                                                <p>In<a href="">Web Design</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-item">
+                                        <div class="post-img">
+                                            <img src="img/post-4.jpg" />
+                                        </div>
+                                        <div class="post-text">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                            <div class="post-meta">
+                                                <p>By<a href="">Admin</a></p>
+                                                <p>In<a href="">Web Design</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-item">
+                                        <div class="post-img">
+                                            <img src="img/post-5.jpg" />
+                                        </div>
+                                        <div class="post-text">
+                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                            <div class="post-meta">
+                                                <p>By<a href="">Admin</a></p>
+                                                <p>In<a href="">Web Design</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> *@
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <div class="image-widget">
+                            <a href="#"><img src="/img/blog/blog-5.jpg" alt="Image"></a>
+                        </div>
+                    </div>
+                    <!--Danh mục-->
+                    <div class="sidebar-widget">
+                        <h2 class="widget-title">Danh mục</h2>
+                        <div class="category-widget">
+                            <ul>
+                                @foreach (var item in categoryBlog)
+                                {
+                                    <li><a href="">@item.Name</a><span></span></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <div class="image-widget">
+                            <a href="#"><img src="/img/blog/blog-3.jpg" alt="Image"></a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h2 class="widget-title">Tags</h2>
+                        <div class="tag-widget">
+                            @* <a href="">National</a> *@
+                        </div>
+                    </div>
+
+                    @* <div class="sidebar-widget">
+                        <h2 class="widget-title">Text Widget</h2>
+                        <div class="text-widget">
+                            <p>
+                                Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea nec eros. Nunc eu enim non turpis id augue.
+                            </p>
+                        </div>
+                    </div> *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Single Post End-->
