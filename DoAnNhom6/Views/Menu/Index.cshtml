@@ -1,0 +1,72 @@
+﻿
+<div class="page-header mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Menu</h2>
+            </div>
+            <div class="col-12">
+                <a href="">Các món ăn</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Menu Start -->
+<div class="menu">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Menu</h2>
+        </div>
+        <div class="menu-tab">
+
+            <ul class="nav nav-pills justify-content-center">
+
+                @foreach (var categoryid in new[] { 11, 1, 2, 3, 4, 5 })
+                {
+                    <li class="nav-item">
+                        <a class="nav-link @(categoryid == 11 ? "active" : "")" data-toggle="pill" href="#category-@categoryid">
+                            @if (categoryid == 11)
+                            {
+                                <span>Combo</span>
+                            }
+                            else if (categoryid == 1)
+                            {
+                                <span>Món ăn vặt</span>
+                            }
+                            else if (categoryid == 2)
+                            {
+                                <span>Gà rán</span>
+                            }
+                            else if (categoryid == 3)
+                            {
+                                <span>Pizza</span>
+                            }
+                            else if (categoryid == 4)
+                            {
+                                <span>Mì</span>
+                            }
+                            else if (categoryid == 5)
+                            {
+                                <span>Đồ uống</span>
+                            }
+                        </a>
+                    </li>
+                }
+            </ul>
+            <div class="tab-content">
+                @foreach (var categoryid in new[] { 11, 1, 2, 3, 4, 5 })
+                {
+                    <div id="category-@categoryid"
+                         class="container tab-pane @(categoryid == 11 ? "active" : "fade")">
+                        <div class="row">
+                            @await Component.InvokeAsync("Product", new { categoryid = categoryid })
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- Menu End -->
