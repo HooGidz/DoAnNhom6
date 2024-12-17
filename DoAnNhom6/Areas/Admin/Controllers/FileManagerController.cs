@@ -2,7 +2,7 @@
 
 namespace DoAnNhom6.Areas.Admin.Controllers
 {
-    public class FileManagerController: Controller
+    public class FileManagerController : Controller
     {
 
         [Area("Admin")]

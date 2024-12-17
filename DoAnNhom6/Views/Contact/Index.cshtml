@@ -100,3 +100,33 @@
     </div>
 </div>
 <!-- Contact End -->
+@section Scripts {
+    <script>
+        $(document).ready(function(){
+            $("#sendMessageButton").click(function(){
+                _name = $("#name").val();
+                _phone = $("#email").val();
+                _email = $("#subject").val();
+                _message = $("#message").val();
+                $.ajax({
+                    url: "/Contact/Create",
+                    type: "POST",
+                    dataType: "Json",
+                    data: {name: _name, phone: _phone, email: _email, message: _message},
+                    success: function(result){
+                        if(result != null){
+                            $("#name").val("");
+                            $("#email").val("");
+                            $("#subject").val("");
+                            $("#message").val("");
+                            toastr.success('Gửi thành công');
+                        }
+                        else{
+                            toastr.success('Gửi không thành công');
+                        }
+                    }
+                })
+            });
+        })
+    </script>
+}
