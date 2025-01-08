@@ -20,7 +20,7 @@
     <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="~/lib/flaticon/font/flaticon.css" rel="stylesheet">
     <link href="~/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Template Stylesheet -->
     <link href="~/css/style.css" rel="stylesheet">
 </head>
@@ -34,10 +34,17 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav ml-auto">
+            <div pt-4 class="collapse navbar-collapse justify-content-between " id="navbarCollapse">
+                <div class="navbar-nav navbar-edit-1">
                     @await Component.InvokeAsync("MenuTop")
                 </div>
+                <a href="#" class="edit-1">
+					<i style="color:#ffffff;" class="icon fa fa-cart-shopping"></i>
+                </a>
+                <a href="#" class="edit-2">
+                    <i class="icon fa-solid fa-user" style="color: #ffffff;"></i>
+                </a>
+
             </div>
         </div>
     </div>
