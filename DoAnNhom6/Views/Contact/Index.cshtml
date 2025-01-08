@@ -76,19 +76,19 @@
                 <div id="success"></div>
                 <form name="sentMessage" id="contactForm" novalidate="novalidate">
                     <div class="control-group">
-                        <input type="text" class="form-control" id="name" placeholder="Họ tên của bạn" required="required" data-validation-required-message="Please enter your name" />
+                        <input type="text" class="form-control" id="c_name" placeholder="Họ tên của bạn" required="required" data-validation-required-message="Please enter your name" />
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="email" class="form-control" id="email" placeholder="Email của bạn" required="required" data-validation-required-message="Please enter your email" />
+                        <input type="email" class="form-control" id="c_email" placeholder="Email của bạn" required="required" data-validation-required-message="Please enter your email" />
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="text" class="form-control" id="subject" placeholder="Vấn đề" required="required" data-validation-required-message="Please enter a subject" />
+                        <input type="text" class="form-control" id="c_subject" placeholder="Vấn đề" required="required" data-validation-required-message="Please enter a subject" />
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <textarea class="form-control" id="message" placeholder="Tin nhắn" required="required" data-validation-required-message="Please enter your message"></textarea>
+                        <textarea class="form-control" id="c_message" placeholder="Tin nhắn" required="required" data-validation-required-message="Please enter your message"></textarea>
                         <p class="help-block text-danger"></p>
                     </div>
                     <div>
@@ -103,22 +103,22 @@
 @section Scripts {
     <script>
         $(document).ready(function(){
-            $("#sendMessageButton").click(function(){
-                _name = $("#name").val();
-                _phone = $("#email").val();
-                _email = $("#subject").val();
-                _message = $("#message").val();
+            $("#c_sendMessageButton").click(function(){
+                _name = $("#c_name").val();
+                _email = $("#c_email").val();
+                _subject= $("#c_subject").val();
+                _message = $("#c_message").val();
                 $.ajax({
                     url: "/Contact/Create",
                     type: "POST",
                     dataType: "Json",
-                    data: {name: _name, phone: _phone, email: _email, message: _message},
+                    data: {name: _name, email = _email, subject: _subject, message: _message},
                     success: function(result){
                         if(result != null){
-                            $("#name").val("");
-                            $("#email").val("");
-                            $("#subject").val("");
-                            $("#message").val("");
+                            $("#c_name").val("");
+                            $("#c_email").val("");
+                            $("#c_subject").val("");
+                            $("#c_message").val("");
                             toastr.success('Gửi thành công');
                         }
                         else{
