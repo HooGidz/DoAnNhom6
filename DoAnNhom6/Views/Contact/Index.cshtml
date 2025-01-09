@@ -1,4 +1,9 @@
-﻿<div class="page-header">
+﻿@model DoAnNhom6.Models.TblContact
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="page-header">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -73,60 +78,42 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.110348170105!2d105.69317477496648!3d18.659043582461575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3139cddf0bf20f23%3A0x86154b56a284fa6d!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBWaW5o!5e0!3m2!1svi!2s!4v1732875035944!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-md-6">
-                <div id="success"></div>
-                <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                @* <div id="success"></div> *@
+                <form asp-action="sendcontact" name="sentmessage" id="contactform">
                     <div class="control-group">
-                        <input type="text" class="form-control" id="c_name" placeholder="Họ tên của bạn" required="required" data-validation-required-message="Please enter your name" />
+                        <input asp-for="Name" type="text" class="form-control" id="name" placeholder="Họ tên của bạn" required="required" data-validation-required-message="please enter your name" />
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="email" class="form-control" id="c_email" placeholder="Email của bạn" required="required" data-validation-required-message="Please enter your email" />
+                        <input asp-for="Phone" type="text" class="form-control" id="phone" placeholder="Số điện thoại" required="required" data-validation-required-message="please enter your phone" />
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="text" class="form-control" id="c_subject" placeholder="Vấn đề" required="required" data-validation-required-message="Please enter a subject" />
+                        <input asp-for="Email" type="email" class="form-control" id="email" placeholder="Email của bạn" required="required" data-validation-required-message="please enter your email" />
                         <p class="help-block text-danger"></p>
                     </div>
+
                     <div class="control-group">
-                        <textarea class="form-control" id="c_message" placeholder="Tin nhắn" required="required" data-validation-required-message="Please enter your message"></textarea>
+                        <textarea asp-for="Message" class="form-control" id="message" placeholder="Tin nhắn" required="required" data-validation-required-message="please enter your message"></textarea>
                         <p class="help-block text-danger"></p>
                     </div>
                     <div>
-                        <button class="btn custom-btn" type="submit" id="sendMessageButton">Gửi tin nhắn</button>
+                        <button class="btn custom-btn" type="submit" id="sendmessagebutton">Gửi</button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
 </div>
 <!-- Contact End -->
-@section Scripts {
+@section scripts {
     <script>
-        $(document).ready(function(){
-            $("#c_sendMessageButton").click(function(){
-                _name = $("#c_name").val();
-                _email = $("#c_email").val();
-                _subject= $("#c_subject").val();
-                _message = $("#c_message").val();
-                $.ajax({
-                    url: "/Contact/Create",
-                    type: "POST",
-                    dataType: "Json",
-                    data: {name: _name, email = _email, subject: _subject, message: _message},
-                    success: function(result){
-                        if(result != null){
-                            $("#c_name").val("");
-                            $("#c_email").val("");
-                            $("#c_subject").val("");
-                            $("#c_message").val("");
-                            toastr.success('Gửi thành công');
-                        }
-                        else{
-                            toastr.success('Gửi không thành công');
-                        }
-                    }
-                })
-            });
-        })
+        $(document).ready(function () {
+            var statusMessage = '@TempData["StatusMessage"]';
+            if (statusMessage) {
+                toastr.success(statusMessage);
+            }
+        });
     </script>
 }
