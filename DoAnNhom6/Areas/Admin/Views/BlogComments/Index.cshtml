@@ -1,0 +1,86 @@
+﻿@model IEnumerable<DoAnNhom6.Models.TblBlogComment>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="content-body">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Quản lý BlogComment</h1>
+                </div>
+                <div class="col sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- row -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h4><a asp-action="Create">Thêm mới</a></h4>
+                            </div>
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-hover text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Tiêu Đề</th>
+                                            <th>Số điện thoại</th>
+                                            <th>Email</th>
+                                            <th>CreateDate</th>
+                                            <th>Chi tiết</th>
+                                            <th>Hiện</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            int i = 1;
+                                        }
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@(i++)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.Detail)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.IsActive)</td>
+                                                <td>
+                                                    <a asp-action="Edit" asp-route-id="@item.CommentId" class="btn btn-primary">Sửa</a>
+                                                    <a asp-action="Details" asp-route-id="@item.CommentId" class="btn btn-info">Chi tiết</a>
+                                                    <a asp-action="Delete" asp-route-id="@item.CommentId" class="btn btn-danger">Xóa</a>
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- #/ container -->
+</div>
+
+

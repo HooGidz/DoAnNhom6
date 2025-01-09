@@ -1,0 +1,122 @@
+﻿@model DoAnNhom6.Models.TblBlog
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content-body">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Thêm Blog</h1>
+                </div>
+                <div class="col sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- row -->
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-header">
+                            <h3 class="card-title">Thêm Blog</h3>
+                        </div>
+                        <form asp-action="Create">
+                            <div class="card-body">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="Title" class="control-label">Tiêu đề</label>
+                                    <input asp-for="Title" class="form-control" />
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="Alias" class="control-label"></label>
+                                    <input asp-for="Alias" class="form-control" />
+                                    <span asp-validation-for="Alias" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Description" class="control-label">Mô tả</label>
+                                    <input asp-for="Description" class="form-control" />
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Detail" class="control-label">Chi tiết</label>
+                                    <input asp-for="Detail" class="form-control" />
+                                    <span asp-validation-for="Detail" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Image" class="control-label">Ảnh</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-success" onclick="openDialog()">Chọn ảnh</button>
+                                        </div>
+                                        <input type="text" class="form-control" id="file_input" asp-for="Image" aria-describedby="button-addon2" name="Image" />
+                                    </div>
+                                    <span asp-validation-for="Image" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SeoTitle" class="control-label">SeoTitle</label>
+                                    <input asp-for="SeoTitle" class="form-control" />
+                                    <span asp-validation-for="SeoTitle" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SeoDescription" class="control-label">SeoDescription</label>
+                                    <input asp-for="SeoDescription" class="form-control" />
+                                    <span asp-validation-for="SeoDescription" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SeoKeywords" class="control-label">SeoKeywords</label>
+                                    <input asp-for="SeoKeywords" class="form-control" />
+                                    <span asp-validation-for="SeoKeywords" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CreatedDate" class="control-label">CreatedDate</label>
+                                    <input asp-for="CreatedDate" class="form-control" />
+                                    <span asp-validation-for="CreatedDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ModifiedDate" class="control-label">ModifiedDate</label>
+                                    <input asp-for="ModifiedDate" class="form-control" />
+                                    <span asp-validation-for="ModifiedDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ModifiedBy" class="control-label">ModifiedBy</label>
+                                    <input asp-for="ModifiedBy" class="form-control" />
+                                    <span asp-validation-for="ModifiedBy" class="text-danger"></span>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" asp-for="IsActive" /> Hiển thị
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Thêm mới" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

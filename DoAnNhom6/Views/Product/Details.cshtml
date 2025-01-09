@@ -821,7 +821,7 @@ fadeIn {
         <div class="single-product-area section-space-top-100">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" style="height: 645px">
                         <div class="single-product-img h-100">
                             <div class="swiper-container single-product-slider">
                                 <div class="swiper-wrapper">
@@ -945,22 +945,22 @@ fadeIn {
                                 </div>
                             </div>
                             <div class="col-12 order-lg-2 order-1 pt-10 pt-lg-0">
-                                <div class="swiper-container single-product-thumbs">
-                                    <div class="swiper-wrapper">
-                                        <a href="javascript:void(0)" class="swiper-slide">
+                                <div class="swiper-container single-product-thumbs swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events swiper-container-thumbs">
+                                    <div class="swiper-wrapper" id="swiper-wrapper-183dd8f72cf587aa" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                                        <a href="javascript:void(0)" class="swiper-slide swiper-slide-visible swiper-slide-active swiper-slide-thumb-active" role="group" aria-label="1 / 4" style="width: 116.25px; margin-right: 30px;">
                                             <img class="img-full" src="@Model.Image" alt="Product Thumnail">
                                         </a>
-                                        <a href="javascript:void(0)" class="swiper-slide">
+                                        <a href="javascript:void(0)" class="swiper-slide swiper-slide-visible swiper-slide-next" role="group" aria-label="2 / 4" style="width: 116.25px; margin-right: 30px;">
                                             <img class="img-full" src="@Model.Image" alt="Product Thumnail">
                                         </a>
-                                        <a href="javascript:void(0)" class="swiper-slide">
+                                        <a href="javascript:void(0)" class="swiper-slide swiper-slide-visible" role="group" aria-label="3 / 4" style="width: 116.25px; margin-right: 30px;">
                                             <img class="img-full" src="@Model.Image" alt="Product Thumnail">
                                         </a>
-                                        <a href="javascript:void(0)" class="swiper-slide">
+                                        <a href="javascript:void(0)" class="swiper-slide swiper-slide-visible" role="group" aria-label="4 / 4" style="width: 116.25px; margin-right: 30px;">
                                             <img class="img-full" src="@Model.Image" alt="Product Thumnail">
                                         </a>
                                     </div>
-                                </div>
+                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                             </div>
                         </div>
                     </div>
@@ -1112,9 +1112,9 @@ fadeIn {
                                 <div class="swiper-wrapper">
                                     @foreach (var item in productRelated)
                                     {
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" style="width:440px">
                                             <div class="product-item">
-                                                <div class="product-img img-zoom-effect">
+                                                <div class="product-img img-zoom-effect" style="height:440px">
                                                     <a href="single-product.html">
                                                         <img class="img-full" src="@item.Image" alt="Product Images">
                                                     </a>
