@@ -116,13 +116,33 @@
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/easing/easing.min.js"></script>
     <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="~/lib/tempusdominus/js/moment.min.js"></script>
     <script src="~/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="~/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".product-tab-style-2 a").on("click", function (e) {
+                e.preventDefault(); // Đúng cú pháp
+
+                // Xóa class 'active' khỏi tất cả các thẻ <a>
+                $(".product-tab-style-2 a").removeClass("active");
+
+                // Thêm class 'active' vào thẻ <a> được nhấn
+                $(this).addClass("active");
+
+                // Ẩn tất cả các nội dung tab
+                $(".tab-pane").removeClass("active show");
+
+                // Hiển thị nội dung tab tương ứng
+                const target = $(this).attr("href"); // Lấy giá trị href
+                $(target).addClass("active show");
+            });
+        });
+    </script>
 
     <!-- Contact Javascript File -->
     <script src="~/mail/jqBootstrapValidation.min.js"></script>
