@@ -24,17 +24,24 @@ namespace DoAnNhom6.Controllers
             {
                 return NotFound();
             }
-            var product = await _context.TblProducts.Include(i => i.Category)
+            var product = await _context.TblProducts
+                .Include(i => i.Category)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
             if (product == null)
             {
                 return NotFound();
             }
+
             ViewBag.productReView = _context.TblProductReviews
-                .Where(i => i.ProductId == id).ToList();
-            ViewBag.productRelated = _context.TblProducts.
-                Where(i => i.ProductId != id && i.CategoryId == product.CategoryId).Take(5).
-                OrderByDescending(i => i.ProductId).ToList();
+                .Include(i => i.User)
+                .Where(i => i.ProductId == id)
+                .ToList();
+
+            ViewBag.productRelated = _context.TblProducts
+                .Where(i => i.ProductId != id && i.CategoryId == product.CategoryId)
+                .Take(5)
+                .OrderByDescending(i => i.ProductId)
+                .ToList();
             return View(product);
         }
     }
