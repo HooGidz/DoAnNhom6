@@ -1,0 +1,99 @@
+﻿@model IEnumerable<DoAnNhom6.Models.TblBlog>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="content-body">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Quản lý Blog</h1>
+                </div>
+                <div class="col sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- row -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h4><a asp-action="Create">Thêm mới</a></h4>
+                            </div>
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-hover text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th>STT</th>
+                                            <th>Title</th>
+                                            <th>Alias</th>
+                                            
+                                            <th>Mô tả</th>
+                                            <th>Chi tiết</th>
+                                            <th>Ảnh</th>
+                                            <th>SeoTitle</th>
+                                            <th>SeoDescription</th>
+                                            <th>SeoKeywords</th>
+                                            <th>CreatedDate</th>                                            
+                                            <th>ModifiedDate</th>
+                                            
+                                            <th>IsActive</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            int i = 1;
+                                        }
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@(i++)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.Alias)</td>                                                
+                                                <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.Detail)</td>
+                                                <td><img src="@Html.DisplayFor(modelItem => item.Image)" width="50" hight="50" /></td>
+                                                <td>@Html.DisplayFor(modelItem => item.SeoTitle)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.SeoDescription)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.SeoKeywords)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.ModifiedDate)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.IsActive)</td>
+                                                <td>
+                                                    <a asp-action="Edit" asp-route-id="@item.BlogId" class="btn btn-primary">Sửa</a>
+                                                    <a asp-action="Details" asp-route-id="@item.BlogId" class="btn btn-info">Chi tiết</a>
+                                                    <a asp-action="Delete" asp-route-id="@item.BlogId" class="btn btn-danger">Xóa</a>
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- #/ container -->
+</div>
+
+
