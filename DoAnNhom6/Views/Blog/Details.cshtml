@@ -246,3 +246,13 @@
     </div>
 </div>
 <!-- Single Post End-->
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            var statusMessage = '@TempData["StatusMessage"]';
+            if (statusMessage) {
+                toastr.success(statusMessage);
+            }
+        });
+    </script>
+}

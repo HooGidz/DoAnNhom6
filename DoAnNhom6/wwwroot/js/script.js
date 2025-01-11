@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const formElements = document.querySelectorAll('input, select, textarea'); // Chọn tất cả các trường trong form
     formElements.forEach(element => {
         // Loại trừ trường sao (input[name="star"]) khỏi việc xóa giá trị
-        if (element.name !== 'star') {
+        if (element.name !== 'star' && element.name !== 'cart' ) {
             element.value = ''; // Đặt giá trị của các trường còn lại là trống
         }
     });
