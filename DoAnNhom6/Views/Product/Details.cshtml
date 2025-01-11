@@ -1,10 +1,11 @@
-﻿@model TblProduct
+﻿@model TblProductReview
 @{
 
     List<TblProductReview> productReView = ViewBag.productReView;
     List<TblProduct> productRelated = ViewBag.productRelated;
 
 }
+
 <div class="page-header mb-0">
     <div class="container">
         <div class="row">
@@ -12,7 +13,7 @@
                 <h2>Menu</h2>
             </div>
             <div class="col-12">
-                <a href="">@Model.Name</a>
+                <a href="">@Model.Product.Name</a>
             </div>
         </div>
     </div>
@@ -24,22 +25,22 @@
                 <div class="container">
                     <div class="row">
                         <div class="img-2 col-lg-12">
-                            <img src="@Model.Image" alt="Product 3" class="img-fluid">
+                            <img src="@Model.Product.Image" alt="Product 3" class="img-fluid">
                         </div>
                         <div class="col-lg-12 mt-3">
                             <div class="container">
                                 <div class="row image-slider-2">
                                     <div class="col-3 slider-wrapper-2">
-                                        <img src="@Model.Image" alt="Product 3" class="img-fluid">
+                                        <img src="@Model.Product.Image" alt="Product 3" class="img-fluid">
                                     </div>
                                     <div class="col-3 slider-wrapper-2">
-                                        <img src="@Model.Image" alt="Product 3" class="img-fluid">
+                                        <img src="@Model.Product.Image" alt="Product 3" class="img-fluid">
                                     </div>
                                     <div class="col-3 slider-wrapper-2">
-                                        <img src="@Model.Image" alt="Product 3" class="img-fluid">
+                                        <img src="@Model.Product.Image" alt="Product 3" class="img-fluid">
                                     </div>
                                     <div class="col-3 slider-wrapper-2">
-                                        <img src="@Model.Image" alt="Product 3" class="img-fluid">
+                                        <img src="@Model.Product.Image" alt="Product 3" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -51,21 +52,21 @@
                 <div>
                     <div class="col-12 order-lg-1 order-2 pt-10 pt-lg-0">
                         <div class="single-product-content">
-                            <h2 class="title">@Model.Name</h2>
+                            <h2 class="title">@Model.Product.Name</h2>
                             <div class="price-box">
-                                @if (Model.PriceSale == 0)
+                                @if (Model.Product.PriceSale == 0)
                                 {
                                     <p class="new-price text-danger" style="margin-bottom: 5px">
-                                        <span>@Model.Price₫</span>
+                                        <span>@Model.Product.Price₫</span>
                                     </p>
                                 }
                                 else
                                 {
                                     <p class="new-price text-danger" style="margin-bottom: 0px">
-                                        <span>@Model.PriceSale₫</span>
+                                        <span>@Model.Product.PriceSale₫</span>
                                     </p>
                                     <p class="old-price">
-                                        <span>@Model.Price₫</span>
+                                        <span>@Model.Product.Price₫</span>
                                     </p>
                                 }
                             </div>
@@ -83,7 +84,7 @@
                                 </div>
                             </div>
                             <p class="short-desc">
-                                @Model.Description
+                                @Model.Product.Description
                             </p>
                             <ul class="quantity-with-btn pb-7">
                                 <li class="quantity">
@@ -100,17 +101,15 @@
                                 <li class="add-to-cart">
                                     <a class="btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0" href="cart.html">Thêm vào giỏ</a>
                                 </li>
-                                <li class="wishlist-btn-wrap">
-                                    <a class="btn rounded-0" href="#" style=" margin-top: 5px">
-                                        <i class="fa-regular fa-heart fa-fade" style="color: #ee2b2b;"></i>
-                                    </a>
+                                <li class="wishlist-btn-wrap ml-2">
+                                    <i class="fas fa-heart heart" onclick="toggleHeart(this)"></i>
                                 </li>
                             </ul>
                             <div class="product-category text-matterhorn pb-2">
                                 <span class="title">Categories :</span>
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)">@Model.Category.Name</a>
+                                        <a href="javascript:void(0)">@Model.Product.Category.Name</a>
                                     </li>
                                 </ul>
                             </div>
@@ -184,7 +183,7 @@
                         <div class="tab-pane fade active show" id="description" role="tabpanel" aria-labelledby="description-tab">
                             <div class="product-description-body">
                                 <p class="short-desc mb-0">
-                                    @Html.Raw(Model.Detail)
+                                    @Html.Raw(Model.Product.Detail)
                                 </p>
                             </div>
                         </div>
@@ -197,7 +196,7 @@
                                         <li>
                                             <ul class="user-info">
                                                 <li class="user-avatar">
-                                                    <img src="@item.User.Avatar" alt="Product 3" class="img-fluid">
+                                                    <img src="~/img/user/user-1.jpg" alt="Product 3" class="img-fluid" />
                                                 </li>
                                                 <li class="user-comment">
                                                     <div class="rating-box">
@@ -209,7 +208,7 @@
                                                         </ul>
                                                     </div>
                                                     <div class="meta">
-                                                        <span><strong>@item.User.FullName -</strong> @item.CreatedDate.Value.ToString("dd/mm/yyyy")</span>
+                                                        <span><strong>@item.Name -</strong> @item.CreatedDate.Value.ToString("dd/MM/yyyy")</span>
                                                     </div>
                                                     <p class="short-desc mb-0">
                                                         @item.Detail
@@ -219,38 +218,47 @@
                                         </li>
                                     }
                                 </ul>
+                                @* Đánh giá *@
                                 <div class="feedback-area pt-5">
                                     <h2 class="heading mb-1">Thêm đánh giá của bạn</h2>
                                     <p class="short-desc mb-3">Địa chỉ Emial của bạn không được bảo trống.</p>
                                     <div class="rating-box">
                                         <span>Đánh giá của bạn</span>
-                                        <ul>
-                                            @for (var i = 0; i < Model.Star; i++)
-                                            {
-                                                <li><i class="fa-solid fa-star" style="color: #FFD43B;"></i></li>
-                                            }
+                                        <ul id="star-rating">
+                                            <li><i class="fa-solid fa-star" style="color: #FFD43B;" data-value="1"></i></li>
+                                            <li><i class="fa-solid fa-star" style="color: #FFD43B;" data-value="2"></i></li>
+                                            <li><i class="fa-solid fa-star" style="color: #FFD43B;" data-value="3"></i></li>
+                                            <li><i class="fa-solid fa-star" style="color: #FFD43B;" data-value="4"></i></li>
+                                            <li><i class="fa-solid fa-star" style="color: #FFD43B;" data-value="5"></i></li>
                                         </ul>
                                     </div>
-                                    <form class="feedback-form pt-8" action="#">
+                                    <form asp-action="/product/@Model.Product.Alias-@Model.ProductId" class="feedback-form pt-8">
+										<input asp-for="Star" type="hidden" id="star-value" name="star" />
+
                                         <div class="group-input">
                                             <div class="form-field me-md-6 mb-6 mb-md-0">
-                                                <input type="text" name="name" placeholder="Họ tên của bạn*" class="input-field">
+                                                <input asp-for="Name" type="text" name="name" placeholder="Họ tên của bạn*" class="input-field">
                                             </div>
                                             <div class="form-field me-md-6 mb-6 mb-md-0">
-                                                <input type="text" name="email" placeholder="Email*" class="input-field">
+                                                <input asp-for="Email" type="text" name="email" placeholder="Email*" class="input-field">
                                             </div>
                                             <div class="form-field">
-                                                <input type="text" name="number" placeholder="Số điện thoại" class="input-field">
+                                                <input asp-for="Phone" type="text" name="phone" placeholder="Số điện thoại" class="input-field">
                                             </div>
                                         </div>
                                         <div class="form-field mt-6">
-                                            <textarea name="message" placeholder="Bình luận của bạn" class="textarea-field" style="height: 100px;"></textarea>
+                                            <textarea asp-for="Detail" name="detail" placeholder="Bình luận của bạn" class="textarea-field" style="height: 100px;"></textarea>
+                                        </div>
+                                        <div>
+                                            <input type="hidden" name="ProductId" value="@Model.Product.ProductId" />
                                         </div>
                                         <div class="button-wrap mt-8">
-                                            <button type="submit" value="submit" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover btn-lg rounded-0" name="submit">Gửi đánh giá</button>
+                                            <button type="submit" value="submit" id="add" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover btn-lg rounded-0" name="submit">Gửi đánh giá</button>
                                         </div>
                                     </form>
+
                                 </div>
+                                
                             </div>
                         </div>
                         <div class="tab-pane fade" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
@@ -279,3 +287,13 @@
         </div>
     </div>
 </div>
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            var statusMessage = '@TempData["StatusMessage"]';
+            if (statusMessage) {
+                toastr.success(statusMessage);
+            }
+        });
+    </script>
+}

@@ -31,7 +31,5 @@ public partial class TblUser
 
     public virtual ICollection<TblBlog> TblBlogs { get; set; } = new List<TblBlog>();
 
-    public virtual ICollection<TblProductReview> TblProductReviews { get; set; } = new List<TblProductReview>();
-
     public virtual ICollection<TblWishList> TblWishLists { get; set; } = new List<TblWishList>();
 }

@@ -251,18 +251,21 @@ public partial class DoAnNhom6Context : DbContext
             entity.ToTable("tbl_ProductReview");
 
             entity.Property(e => e.ProductReviewId).HasColumnName("ProductReview_ID");
+            entity.Property(e => e.ProductId).HasColumnName("Product_ID");
+            entity.Property(e => e.Name).HasMaxLength(250);
+            entity.Property(e => e.Phone).HasMaxLength(50);
+            entity.Property(e => e.Email).HasMaxLength(250);
+
+
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.Detail).HasMaxLength(200);
-            entity.Property(e => e.ProductId).HasColumnName("Product_ID");
-            entity.Property(e => e.UserId).HasColumnName("User_ID");
+
 
             entity.HasOne(d => d.Product).WithMany(p => p.TblProductReviews)
                 .HasForeignKey(d => d.ProductId)
                 .HasConstraintName("FK_tbl_ProductReview_tbl_Product");
 
-            entity.HasOne(d => d.User).WithMany(p => p.TblProductReviews)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK_tbl_ProductReview_tbl_User");
+
         });
 
         modelBuilder.Entity<TblRole>(entity =>

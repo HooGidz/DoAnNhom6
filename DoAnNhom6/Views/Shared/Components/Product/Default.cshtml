@@ -1,8 +1,8 @@
 ﻿<!--hehe-->
 @model IEnumerable<DoAnNhom6.Models.TblProduct>
-@foreach (var item in Model.Take(8))
+@foreach (var item in Model)
 {
-    string sUrl = $"/product/{item.Alias}-{item.ProductId}.html";
+    string sUrl = $"/product/{item.Alias}-{item.ProductId}";
     <div class="col-12 col-md-4 col-lg-4 border-1">
         <div class="product">
 			<a href="@sUrl">

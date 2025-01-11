@@ -2651,7 +2651,7 @@ a:focus {
 }
 
 .product-detail .mt-8 {
-    margin-top: 2.5rem !important;
+    margin-top: 1.5rem !important;
 }
 
 .product-detail .feedback-form .textarea-field {
@@ -2732,7 +2732,7 @@ a:focus {
 }
 
 .product-detail .pt-8 {
-    padding-top: 2.5rem !important;
+    padding-top: 1rem !important;
 }
 
 
@@ -2796,5 +2796,29 @@ a:focus {
     padding-top: 35px;
 }
 
+#star-rating {
+    list-style-type: none;
+    padding: 0;
+}
+
+#star-rating li {
+display: inline-block;
+cursor: pointer;
+}
+
+#star-rating li:hover,
+#star-rating li.selected {
+    color: #FFD43B; /* Màu vàng khi chọn hoặc hover */
+}
+.heart {
+    font-size: 50px;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.6s ease 0s;
+}
+
+.heart.selected {
+    color: #ee2b2b;
+}
 /*****************************/
 
