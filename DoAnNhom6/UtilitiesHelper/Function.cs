@@ -1,4 +1,9 @@
-﻿namespace DoAnNhom6.Utilities
+using System.Text;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Security.Cryptography;
+
+namespace DoAnNhom6.Utilities
 {
     public class Function
     {
@@ -24,11 +29,13 @@
                 return strBuilder.ToString();
             }
         }
-        public static string MD5Password(string? text)
+        public static string SHA256Password(string? text)
         {
-            string str = MD5Hash(text);
-            for (int i = 0; i <= 5;  i++) 
-                str = MD5Hash(str + "-" + str);
+            string str = SHA256Hash(text);
+            for (int i = 0; i <= 5; i++)
+            {
+                str = SHA256Hash(str + "-" + str);
+            }
             return str;
         }
         public static bool IsLogin()
