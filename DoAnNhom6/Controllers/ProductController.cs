@@ -61,7 +61,7 @@ namespace DoAnNhom6.Controllers
                 _context.Add(review);
                 await _context.SaveChangesAsync();
 
-                TempData["StatusMessage"] = "Gửi liên hệ thành công!";
+                TempData["StatusMessage"] = "Gửi đánh giá thành công!";
 
                 return Redirect($"/product/{alias}-{id}");
             }

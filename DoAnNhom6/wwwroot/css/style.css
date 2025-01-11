@@ -1313,6 +1313,7 @@ a:focus {
 .single .single-content img {
     margin-bottom: 20px;
     width: 100%;
+    border-radius: 15px;
 }
 
 .single .single-tags {
@@ -1721,10 +1722,12 @@ a:focus {
 .sidebar .image-widget img {
     max-width: 100%;
     transition: .3s;
+    border-radius: 15px;
 }
 
 .sidebar .image-widget img:hover {
     transform: scale(1.1);
+    boder-radius: 15px;
 }
 
 

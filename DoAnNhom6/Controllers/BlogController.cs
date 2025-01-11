@@ -13,18 +13,19 @@ namespace DoAnNhom6.Controllers
         {
             _context = context;
         }
-        [Route("/blog/{alias}-{id}.html")]
+        [Route("/blog/{alias}-{id}")]
 
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.TblBlogs == null)
-            {
-                return NotFound();
-            }
+            //if (id == null || _context.TblBlogs == null)
+            //{
+            //    return NotFound();
+            //}
 
-            var blog = await _context.TblBlogs
-                .Include(m => m.Category)
-                .Include(m => m.User)
+            var blog = await _context.TblBlogComments
+                .Include(m => m.Blog)
+                    .ThenInclude(m => m.Category )
+                .Include(m => m.Blog.User)
                 .FirstOrDefaultAsync(m => m.BlogId == id);
             if (blog == null)
             {
@@ -36,13 +37,11 @@ namespace DoAnNhom6.Controllers
             var categoryBlog = await _context.TblProductCategories
                 .Where(m => m.IsActive)
                 .ToListAsync();
-            //.FirstOrDefaultAsync(m => m.CategoryId == id);
-
             ViewBag.categoryBlog = categoryBlog;
 
             //lọc bài viết liên quan
             var relatedBlog = await _context.TblBlogs
-                .Where(m => m.IsActive && m.CategoryId == blog.CategoryId && m.BlogId != blog.BlogId)
+                .Where(m => m.IsActive && m.CategoryId == blog.Blog.CategoryId && m.BlogId != blog.BlogId)
                 .OrderBy(m  => m.BlogId)
                 .ToListAsync();
             ViewBag.relatedBlog = relatedBlog;
@@ -64,7 +63,6 @@ namespace DoAnNhom6.Controllers
             ViewBag.popularBlog = popularBlog;
 
 
-
             return View(blog);
         }
         public async Task<IActionResult> Index()
@@ -75,6 +73,25 @@ namespace DoAnNhom6.Controllers
                 .ToListAsync();
 
             return View(blog);
+        }
+        [HttpPost("/blog/{alias}-{id}")]
+        public async Task<IActionResult> Add([Bind("BlogId,Name,Phone,Email,Detail")] TblBlogComment comment, string alias, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                comment.CreatedDate = DateTime.Now;
+                comment.IsActive = true;
+                comment.BlogId = id;
+                //comment.Blog.Alias = alias;
+
+                _context.Add(comment);
+                await _context.SaveChangesAsync();
+                TempData["StatusMessage"] = "Gửi bình luận thành công";
+
+                return Redirect($"/blog/{alias}-{id}");
+            }
+            TempData["StatusMessage"] = "Đã có lỗi xảy ra. Vui lòng kiểm tra lại thông tin.";
+            return Redirect($"/blog/{alias}-{id}");
         }
 
     }
