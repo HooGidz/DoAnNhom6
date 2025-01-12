@@ -7,8 +7,8 @@ namespace DoAnNhom6.Areas.Admin.Controllers
         [Area ("Admin")]
         public IActionResult Index()
         {
-            if (!functions.IsLogin())
-                return RedirectToAction("Index", "Login");
+            //if (!functions.IsLogin())
+            //    return RedirectToAction("Index", "Login");
             return View();
         }
     }

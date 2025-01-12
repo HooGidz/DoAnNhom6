@@ -12,12 +12,12 @@ namespace DoAnNhom6.Areas.Admin.Controllers
     [Area("Admin")]
     public class MenusController : Controller
     {
-        public IActionResult Index();
-        {        
-            if (!functions.IsLogin())
-                return RedirectToAction("Index", "Login");
-            return View();
-        }
+        //public IActionResult Index();
+        //{        
+        //    if (!functions.IsLogin())
+        //        return RedirectToAction("Index", "Login");
+        //    return View();
+        //}
         private readonly DoAnNhom6Context _context;
 
         public MenusController(DoAnNhom6Context context)
