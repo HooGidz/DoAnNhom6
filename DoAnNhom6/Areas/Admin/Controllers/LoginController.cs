@@ -1,6 +1,7 @@
 ﻿using DoAnNhom6.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using DoAnNhom6.Models;
 
 namespace DoAnNhom6.Areas.Admin.Controllers
 {
@@ -23,17 +24,17 @@ namespace DoAnNhom6.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            string pw = Functions.SHA256Password(user.Password);
+            string pw = Function.SHA256Password(user.Password);
             var check = _context.TblUser.Where(m => (m.Email == user.Email) && (m.Password == pw).FirsOrDefault());
             if (check == null)
             {
-                Functions._Message = "INvalid Username or Password!";
+                Function._Message = "INvalid Username or Password!";
                 return RedirectToAction("Index", "Login");
             }
-            Functions._Message = string.Empty;
-            Functions._UserId = check.UserId;
-            Functions._Username = string.IsNullOrEmpty(check.Username) ? string.Empty : check.Username;
-            Functions._Email = string.IsNullOrEmpty(check.Email) ? string.Empty : check.Email;
+            Function._Message = string.Empty;
+            Function._UserId = check.UserId;
+            Function._Username = string.IsNullOrEmpty(check.Username) ? string.Empty : check.Username;
+            Function._Email = string.IsNullOrEmpty(check.Email) ? string.Empty : check.Email;
             return RedirectToAction("Index", "Home");
         }
     }
