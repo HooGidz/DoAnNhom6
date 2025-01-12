@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using DoAnNhom6.Utilities;
 
 namespace DoAnNhom6.Areas.Admin.Controllers
 {
@@ -7,8 +8,10 @@ namespace DoAnNhom6.Areas.Admin.Controllers
         [Area ("Admin")]
         public IActionResult Index()
         {
-            //if (!functions.IsLogin())
-            //    return RedirectToAction("Index", "Login");
+            if (!DoAnNhom6.Utilities.Function.IsLogin())
+            {
+                return RedirectToAction("Index", "Login", new { area = "Admin" });
+            }
             return View();
         }
     }

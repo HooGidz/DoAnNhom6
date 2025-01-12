@@ -29,7 +29,7 @@ namespace DoAnNhom6.Areas.Admin.Controllers
             var check = _context.TblUsers.Where(m => m.Email == user.Email).FirstOrDefault();
             if (check != null)
             {
-                DoAnNhom6.Utilities.Function._MessageEmail = "Duplicate Email!";
+                DoAnNhom6.Utilities.Function._MessageEmail = "Email đã đăng kí tài khoản!";
                 return RedirectToAction("Index", "Register");
             }
             DoAnNhom6.Utilities.Function._MessageEmail = string.Empty;

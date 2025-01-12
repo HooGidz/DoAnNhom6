@@ -28,6 +28,8 @@ namespace DoAnNhom6.Areas.Admin.Controllers
         // GET: Admin/Blogs
         public async Task<IActionResult> Index()
         {
+            if (!DoAnNhom6.Utilities.Function.IsLogin())  // Kiểm tra xem người dùng đã đăng nhập chưa
+                return RedirectToAction("Login", "Home");
             var doAnNhom6Context = _context.TblBlogs.Include(t => t.Category).Include(t => t.User);
             return View(await doAnNhom6Context.ToListAsync());
         }

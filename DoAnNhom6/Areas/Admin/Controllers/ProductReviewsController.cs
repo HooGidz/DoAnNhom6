@@ -12,12 +12,6 @@ namespace DoAnNhom6.Areas.Admin.Controllers
     [Area("Admin")]
     public class ProductReviewsController : Controller
     {
-        //public IActionResult Index();
-        //{
-        //    if (!functions.IsLogin())
-        //        return RedirectToAction("Index", "Login");
-        //    return View();
-        //}
         private readonly DoAnNhom6Context _context;
 
         public ProductReviewsController(DoAnNhom6Context context)
@@ -28,6 +22,9 @@ namespace DoAnNhom6.Areas.Admin.Controllers
         // GET: Admin/ProductReviews
         public async Task<IActionResult> Index()
         {
+            if (!DoAnNhom6.Utilities.Function.IsLogin())  // Kiểm tra xem người dùng đã đăng nhập chưa
+                return RedirectToAction("Login", "Home");  // Chuyển hướng đến trang đăng nhập nếu chưa đăng nhập
+
             var doAnNhom6Context = _context.TblProductReviews.Include(t => t.Product).Include(t => t.User);
             return View(await doAnNhom6Context.ToListAsync());
         }

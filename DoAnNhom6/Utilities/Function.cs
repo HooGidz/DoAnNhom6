@@ -33,11 +33,11 @@ namespace DoAnNhom6.Utilities
                 str = MD5Hash(str + "-" + str);
             return str;
         }
-        //public static bool IsLogin()
-        //{
-        //    if (string.IsNullOrEmpty(Function._Username) || string.IsNullOrEmpty(Function._Email) || (Function._UserId <= 0))
-        //        return false;
-        //    return true;
-        //}
+        public static bool IsLogin()
+        {
+            if (string.IsNullOrEmpty(Function._Username) || string.IsNullOrEmpty(Function._Email) || (Function._UserId <= 0))
+                return false;
+            return true;
+        }
     }
 }

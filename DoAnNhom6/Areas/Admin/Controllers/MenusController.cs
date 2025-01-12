@@ -28,6 +28,8 @@ namespace DoAnNhom6.Areas.Admin.Controllers
         // GET: Admin/Menus
         public async Task<IActionResult> Index()
         {
+            if (!DoAnNhom6.Utilities.Function.IsLogin())  // Kiểm tra xem người dùng đã đăng nhập chưa
+                return RedirectToAction("Login", "Home");
             return View(await _context.TblMenus.ToListAsync());
         }
 
