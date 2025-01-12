@@ -40,7 +40,7 @@ a:focus {
     color: #ffffff;
     background: #fbaf32;
     border: 2px solid #fbaf32;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: .5s;
 }
 
@@ -1313,6 +1313,7 @@ a:focus {
 .single .single-content img {
     margin-bottom: 20px;
     width: 100%;
+    border-radius: 15px;
 }
 
 .single .single-tags {
@@ -1342,6 +1343,7 @@ a:focus {
     padding: 30px;
     background: rgba(0, 0, 0, .04);
     display: flex;
+    border-radius: 10px;
 }
 
 .single .single-bio-img {
@@ -1458,6 +1460,7 @@ a:focus {
     background: #fbaf32;
     font-size: 16px;
     transition: .3s;
+    border-radius: 5px;
 }
 
 .single .related-slider .owl-nav .owl-prev:hover,
@@ -1543,6 +1546,7 @@ a:focus {
 .single .comment-form form {
     padding: 30px;
     background: #f3f6ff;
+    border-radius: 10px;
 }
 
 .single .comment-form form .form-group:last-child {
@@ -1635,7 +1639,7 @@ a:focus {
 .sidebar .tab-post .nav.nav-pills .nav-link {
     color: #ffffff;
     background: #fbaf32;
-    border-radius: 0;
+    border-radius: 10px;
 }
 
 .sidebar .tab-post .nav.nav-pills .nav-link:hover,
@@ -1721,10 +1725,12 @@ a:focus {
 .sidebar .image-widget img {
     max-width: 100%;
     transition: .3s;
+    border-radius: 15px;
 }
 
 .sidebar .image-widget img:hover {
     transform: scale(1.1);
+    boder-radius: 15px;
 }
 
 
@@ -2651,7 +2657,7 @@ a:focus {
 }
 
 .product-detail .mt-8 {
-    margin-top: 2.5rem !important;
+    margin-top: 1.5rem !important;
 }
 
 .product-detail .feedback-form .textarea-field {
@@ -2732,7 +2738,7 @@ a:focus {
 }
 
 .product-detail .pt-8 {
-    padding-top: 2.5rem !important;
+    padding-top: 1rem !important;
 }
 
 
@@ -2796,5 +2802,33 @@ a:focus {
     padding-top: 35px;
 }
 
+#star-rating {
+    list-style-type: none;
+    padding: 0;
+}
+
+#star-rating li {
+display: inline-block;
+cursor: pointer;
+}
+
+#star-rating li:hover,
+#star-rating li.selected {
+    color: #FFD43B; /* Màu vàng khi chọn hoặc hover */
+}
+.heart {
+    font-size: 50px;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.6s ease 0s;
+}
+.heart:hover{
+    transition: all 0.6s ease 0s;
+    color: #ee2b2b;
+
+}
+.heart.selected {
+    color: #ee2b2b;
+}
 /*****************************/
 

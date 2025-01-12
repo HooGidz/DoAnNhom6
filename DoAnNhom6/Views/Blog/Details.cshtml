@@ -1,4 +1,4 @@
-﻿@model TblBlog
+﻿@model TblBlogComment
 @{
     List<TblBlogComment> blogComment = ViewBag.blogComment;
     List<TblBlog> relatedBlog = ViewBag.relatedBlog;
@@ -28,28 +28,28 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="single-content">
-                    <img src="@Model.Image" />
-                    <h2>@Model.Title</h2>
+                    <img src="@Model.Blog.Image" />
+                    <h2>@Model.Blog.Title</h2>
                     <p>
-                        @Html.Raw(Model.Detail)
-                        @Model.Description
+                        @Html.Raw(Model.Blog.Detail)
+                        @Model.Blog.Description
                     </p>
                     
                 </div>
                 <div class="single-tags">
                     @if (ViewBag.categoryBlog != null)
                     {
-                        <a>@Model.Category.Name</a>
+                        <a>@Model.Blog.Category.Name</a>
                     }
                 </div>
                 <div class="single-bio">
                     <div class="single-bio-img">
-                        <img src="@Model.User.Avatar" />
+                        <img src="@Model.Blog.User.Avatar" />
                     </div>
                     <div class="single-bio-text">
-                        <h3>@Model.User.FullName</h3>
+                        <h3>@Model.Blog.User.FullName</h3>
                         <p>
-                            @Model.Description
+                            @Model.Blog.Description
                         </p>
                     </div>
                 </div>
@@ -103,25 +103,25 @@
                 <!--Thêm bình luận-->
                 <div class="comment-form">
                     <h2>Bình luận của bạn</h2>
-                    <form>
+                    <form asp-action="/blog/@Model.Blog.Alias-@Model.BlogId">
                         <div class="form-group">
                             <label for="name">Họ tên *</label>
-                            <input type="text" class="form-control" id="name">
+                            <input asp-for="Name" type="text" class="form-control" id="name">
                         </div>
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" class="form-control" id="email">
+                            <input asp-for="Email" type="email" class="form-control" id="email">
                         </div>
                         <div class="form-group">
                             <label for="email">SĐT *</label>
-                            <input type="tel" class="form-control" id="tel">
+                            <input asp-for="Phone" type="tel" class="form-control" id="tel">
                         </div>
                         <div class="form-group">
                             <label for="message">Bình luận *</label>
-                            <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                            <textarea asp-for="Detail" id="message" cols="30" rows="5" class="form-control"></textarea>
                         </div>
-                        <div class="form-group">
-                            <input type="submit" value="Đăng bình luận" class="btn custom-btn">
+                        <div class="button-wrap mt-8">
+                            <button type="submit" value="submit" id="add" class="btn custom-btn" name="submit">Đăng bình luận</button>
                         </div>
                     </form>
                 </div>
@@ -179,69 +179,6 @@
                             </ul>
 
                             <div class="tab-content">
-                                <!--feature-->
-                                @* <div id="featured" class="container tab-pane active">
-                                    <div class="post-item">
-                                        <div class="post-img">
-                                            <img src="img/post-1.jpg" />
-                                        </div>
-                                        <div class="post-text">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            <div class="post-meta">
-                                                <p>By<a href="">Admin</a></p>
-                                                <p>In<a href="">Web Design</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="post-item">
-                                        <div class="post-img">
-                                            <img src="img/post-2.jpg" />
-                                        </div>
-                                        <div class="post-text">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            <div class="post-meta">
-                                                <p>By<a href="">Admin</a></p>
-                                                <p>In<a href="">Web Design</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="post-item">
-                                        <div class="post-img">
-                                            <img src="img/post-3.jpg" />
-                                        </div>
-                                        <div class="post-text">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            <div class="post-meta">
-                                                <p>By<a href="">Admin</a></p>
-                                                <p>In<a href="">Web Design</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="post-item">
-                                        <div class="post-img">
-                                            <img src="img/post-4.jpg" />
-                                        </div>
-                                        <div class="post-text">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            <div class="post-meta">
-                                                <p>By<a href="">Admin</a></p>
-                                                <p>In<a href="">Web Design</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="post-item">
-                                        <div class="post-img">
-                                            <img src="img/post-5.jpg" />
-                                        </div>
-                                        <div class="post-text">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            <div class="post-meta">
-                                                <p>By<a href="">Admin</a></p>
-                                                <p>In<a href="">Web Design</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> *@
                                 <!--popular-->
                                 <div id="popular" class="container tab-pane active">
                                     @foreach (var item in popularBlog)
@@ -260,69 +197,6 @@
                                         </div>
                                     }
                                 </div>
-                                <!--Lastest-->
-                                @* <div id="latest" class="container tab-pane fade">
-                                    <div class="post-item">
-                                        <div class="post-img">
-                                            <img src="img/post-1.jpg" />
-                                        </div>
-                                        <div class="post-text">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            <div class="post-meta">
-                                                <p>By<a href="">Admin</a></p>
-                                                <p>In<a href="">Web Design</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="post-item">
-                                        <div class="post-img">
-                                            <img src="img/post-2.jpg" />
-                                        </div>
-                                        <div class="post-text">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            <div class="post-meta">
-                                                <p>By<a href="">Admin</a></p>
-                                                <p>In<a href="">Web Design</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="post-item">
-                                        <div class="post-img">
-                                            <img src="img/post-3.jpg" />
-                                        </div>
-                                        <div class="post-text">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            <div class="post-meta">
-                                                <p>By<a href="">Admin</a></p>
-                                                <p>In<a href="">Web Design</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="post-item">
-                                        <div class="post-img">
-                                            <img src="img/post-4.jpg" />
-                                        </div>
-                                        <div class="post-text">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            <div class="post-meta">
-                                                <p>By<a href="">Admin</a></p>
-                                                <p>In<a href="">Web Design</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="post-item">
-                                        <div class="post-img">
-                                            <img src="img/post-5.jpg" />
-                                        </div>
-                                        <div class="post-text">
-                                            <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            <div class="post-meta">
-                                                <p>By<a href="">Admin</a></p>
-                                                <p>In<a href="">Web Design</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> *@
                             </div>
                         </div>
                     </div>
@@ -372,3 +246,13 @@
     </div>
 </div>
 <!-- Single Post End-->
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            var statusMessage = '@TempData["StatusMessage"]';
+            if (statusMessage) {
+                toastr.success(statusMessage);
+            }
+        });
+    </script>
+}
