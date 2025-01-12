@@ -12,12 +12,6 @@ namespace DoAnNhom6.Areas.Admin.Controllers
     [Area("Admin")]
     public class BlogsController : Controller
     {
-        //public IActionResult Index();
-        //{
-        //    if (!functions.IsLogin())
-        //        return RedirectToAction("Index", "Login");
-        //    return View();
-        //}
         private readonly DoAnNhom6Context _context;
 
         public BlogsController(DoAnNhom6Context context)
