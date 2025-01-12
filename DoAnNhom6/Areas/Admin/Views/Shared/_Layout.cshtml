@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using DoAnNhom6.Utilities;
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -211,12 +213,23 @@
                         </li>
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative" data-toggle="dropdown">
-                                <span class="activity active"></span>
+                                @* <span class="activity active"></span> *@
                                 <img src="~/admin/images/user/1.png" height="40" width="40" alt="">
+                                <span style=" font-size: 19px; color: coral; margin-left: 5px;">
+                                    @DoAnNhom6.Utilities.Function._Username
+                                </span>
                             </div>
                             <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                                 <div class="dropdown-content-body">
                                     <ul>
+                                        <li>
+                                            <h6 style=" font-size: 30px; color: coral; margin-left: 35px;">
+                                                @DoAnNhom6.Utilities.Function._Username
+                                            </h6>
+                                            <span style=" font-size: 15px; color: cornflowerblue; margin-left: 10px;">
+                                                @DoAnNhom6.Utilities.Function._Email
+                                            </span>
+                                        </li>
                                         <li>
                                             <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
                                         </li>
@@ -230,7 +243,7 @@
                                         <li>
                                             <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
                                         </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><a href="/Admin/Login"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                     <hr class="my-2">
                                 </div>
