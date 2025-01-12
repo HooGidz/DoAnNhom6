@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="Detail" class="control-label">Chi tiết</label>
-                                    <input asp-for="Detail" class="form-control" />
+                                    <textarea asp-for="Detail" class="form-control"></textarea>
                                     <span asp-validation-for="Detail" class="text-danger"></span>
                                 </div>
 
@@ -79,5 +79,6 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script>CKEDITOR.replace('Detail');</script>
 
