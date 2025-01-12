@@ -2832,3 +2832,604 @@ cursor: pointer;
 }
 /*****************************/
 
+/*****************/
+/***REGISTER******/
+
+.register-2 .text-primary {
+    color: #7571f9;
+}
+
+.register-2 .text-primary {
+    color: #7571f9 !important;
+}
+
+.register-2 .text-primary {
+    color: #7571f9;
+}
+
+.register-2 .text-primary {
+    color: #7571f9 !important;
+}
+
+.register-2 a {
+    transition: all 0.4s ease-in-out;
+    color: #76838f;
+}
+
+.register-2 a {
+    color: #7571f9;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.register-2 a {
+    transition: all 0.4s ease-in-out;
+    color: #76838f;
+}
+
+.register-2 a {
+    color: #7571f9;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.register-2 * {
+    outline: none;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.register-2 *, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.register-2 * {
+    outline: none;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+.register-2 .mt-5, .my-5 {
+    margin-top: 3rem !important;
+}
+
+.register-2 .mt-5, .my-5 {
+    margin-top: 3rem !important;
+}
+
+.register-2 p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.register-2 p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.register-2 .btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.register-2 .btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.register-2 .login-form__btn.submit {
+    padding: 15px 40px;
+    background: #7571f9;
+    font-weight: 700;
+    width: 80%;
+}
+
+.register-2 .btn {
+    padding: 7px 18px;
+}
+
+.register-2 .login-form__btn {
+    background: #455F98;
+    color: #fff;
+    padding: 13px 40px;
+    font-size: 14px;
+}
+
+.register-2 .w-100 {
+    width: 100% !important;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .register-2 .btn {
+        transition: none;
+    }
+}
+
+.register-2 .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.register-2 .btn {
+    padding: 7px 18px;
+}
+
+.register-2 .login-form__btn {
+    background: #455F98;
+    color: #fff;
+    padding: 13px 40px;
+    font-size: 14px;
+}
+
+.register-2 .w-100 {
+    width: 100% !important;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .register-2 .btn {
+        transition: none;
+    }
+}
+
+.register-2 .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.register-2 button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+}
+
+.register-2 button, select {
+    text-transform: none;
+}
+
+.register-2 button, input {
+    overflow: visible;
+}
+
+.register-2 input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.register-2 button {
+    border-radius: 0;
+}
+
+.register-2 button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+}
+
+.register-2 button, select {
+    text-transform: none;
+}
+
+.register-2 button, input {
+    overflow: visible;
+}
+
+.register-2 input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.register-2 button {
+    border-radius: 0;
+}
+.register-2 .login-input .form-group {
+    margin-bottom: 30px;
+}
+
+.register-2 .login-input .form-group {
+    margin-bottom: 30px;
+}
+
+.register-2 .form-group {
+    margin-bottom: 20px;
+}
+
+.register-2 .form-group {
+    margin-bottom: 1rem;
+}
+
+.register-2 .form-group {
+    margin-bottom: 20px;
+}
+
+.register-2 .form-group {
+    margin-bottom: 1rem;
+}
+.register-2 .login-input .form-group .form-control {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #f5f5f5;
+    padding-left: 0;
+    color: #7A88A1;
+}
+
+.register-2 .login-input .form-group .form-control {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #f5f5f5;
+    padding-left: 0;
+    color: #7A88A1;
+}
+
+.register-2 .form-control {
+    min-height: 40px;
+}
+
+.register-2 .form-control {
+    border-radius: 0;
+    box-shadow: none;
+    height: 45px;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .register-2 .form-control {
+        transition: none;
+    }
+}
+
+.register-2 .form-control {
+    display: block;
+    width: 100%;
+    height: calc(2.0625rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.register-2 .form-control {
+    min-height: 40px;
+}
+
+.register-2 .form-control {
+    border-radius: 0;
+    box-shadow: none;
+    height: 45px;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .register-2 .form-control {
+        transition: none;
+    }
+}
+
+.register-2 .form-control {
+    display: block;
+    width: 100%;
+    height: calc(2.0625rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.register-2 button, input {
+    overflow: visible;
+}
+
+.register-2 input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.register-2 button, input {
+    overflow: visible;
+}
+
+.register-2 input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.register-2 .mb-5, .my-5 {
+    margin-bottom: 3rem !important;
+}
+
+.register-2 .mt-5, .my-5 {
+    margin-top: 3rem !important;
+}
+
+.register-2 .mb-5, .my-5 {
+    margin-bottom: 3rem !important;
+}
+
+.register-2 .mt-5, .my-5 {
+    margin-top: 3rem !important;
+}
+.register-2 h4, .h4 {
+    font-size: 1.125rem;
+}
+
+.register-2 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #222222;
+}
+
+.register-2 h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.register-2 h4, .h4 {
+    font-size: 1.125rem;
+}
+
+.register-2 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #222222;
+}
+
+.register-2 h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.text-center {
+    text-align: center !important;
+}
+
+.register-2 .text-center {
+    text-align: center !important;
+}
+
+.register-2 a {
+    transition: all 0.4s ease-in-out;
+    color: #76838f;
+}
+
+.register-2 a {
+    color: #7571f9;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.register-2 a {
+    transition: all 0.4s ease-in-out;
+    color: #76838f;
+}
+
+.register-2 a {
+    color: #7571f9;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+.register-2 .card .card-body {
+    padding: 1.88rem 1.81rem;
+}
+
+.register-2 .card .card-body {
+    padding: 1.88rem 1.81rem;
+}
+
+.register-2 .pt-5, .py-5 {
+    padding-top: 3rem !important;
+}
+
+.register-2 .card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.register-2 .pt-5, .py-5 {
+    padding-top: 3rem !important;
+}
+
+.register-2 .card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+.register-2 .card {
+    margin-bottom: 30px;
+    border: 0px;
+    border-radius: 0.625rem;
+    box-shadow: 6px 11px 41px -28px #a99de7;
+}
+
+.register-2 .mb-0, .my-0 {
+    margin-bottom: 0 !important;
+}
+
+.register-2 .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.register-2 .card {
+    margin-bottom: 30px;
+    border: 0px;
+    border-radius: 0.625rem;
+    box-shadow: 6px 11px 41px -28px #a99de7;
+}
+
+.register-2 .mb-0, .my-0 {
+    margin-bottom: 0 !important;
+}
+
+.register-2 .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+.register-2 .form-input-content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.register-2 .form-input-content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.register-2 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto, .col-xxl-1, .col-xxl-2, .col-xxl-3, .col-xxl-4, .col-xxl-5, .col-xxl-6, .col-xxl-7, .col-xxl-8, .col-xxl-9, .col-xxl-10, .col-xxl-11, .col-xxl-12, .col-xxl, .col-xxl-auto {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.register-2 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto, .col-xxl-1, .col-xxl-2, .col-xxl-3, .col-xxl-4, .col-xxl-5, .col-xxl-6, .col-xxl-7, .col-xxl-8, .col-xxl-9, .col-xxl-10, .col-xxl-11, .col-xxl-12, .col-xxl, .col-xxl-auto {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.register-2 .h-100 {
+    height: 100% !important;
+}
+
+.register-2 .justify-content-center {
+    justify-content: center !important;
+}
+
+.register-2 .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.register-2 .h-100 {
+    height: 100% !important;
+}
+
+.register-2 .justify-content-center {
+    justify-content: center !important;
+}
+
+.register-2 .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.register-2 .h-100 {
+    height: 100% !important;
+}
+
+@media (min-width: 992px) {
+    .register-2 .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 768px) {
+    .register-2 .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 576px) {
+    .register-2 .container {
+        max-width: 540px;
+    }
+}
+
+.register-2 .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.register-2 .h-100 {
+    height: 100% !important;
+}
+
+@media (min-width: 992px) {
+    .register-2 .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 768px) {
+    .register-2 .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 576px) {
+    .register-2 .container {
+        max-width: 540px;
+    }
+}
+
+.register-2 .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.register-2 {
+    margin-top: 8%;
+}
