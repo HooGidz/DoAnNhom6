@@ -25,7 +25,7 @@ namespace DoAnNhom6.Areas.Admin.Controllers
             if (!DoAnNhom6.Utilities.Function.IsLogin())  // Kiểm tra xem người dùng đã đăng nhập chưa
                 return RedirectToAction("Login", "Home");  // Chuyển hướng đến trang đăng nhập nếu chưa đăng nhập
 
-            var doAnNhom6Context = _context.TblProductReviews.Include(t => t.Product).Include(t => t.User);
+            var doAnNhom6Context = _context.TblProductReviews.Include(t => t.Product).Include(t => t.Product);
             return View(await doAnNhom6Context.ToListAsync());
         }
 
@@ -39,7 +39,7 @@ namespace DoAnNhom6.Areas.Admin.Controllers
 
             var tblProductReview = await _context.TblProductReviews
                 .Include(t => t.Product)
-                .Include(t => t.User)
+                
                 .FirstOrDefaultAsync(m => m.ProductReviewId == id);
             if (tblProductReview == null)
             {
@@ -72,7 +72,7 @@ namespace DoAnNhom6.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ProductId"] = new SelectList(_context.TblProducts, "ProductId", "ProductId", tblProductReview.ProductId);
-            ViewData["UserId"] = new SelectList(_context.TblUsers, "UserId", "UserId", tblProductReview.UserId);
+            
             return View(tblProductReview);
         }
 
@@ -90,7 +90,7 @@ namespace DoAnNhom6.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["ProductId"] = new SelectList(_context.TblProducts, "ProductId", "ProductId", tblProductReview.ProductId);
-            ViewData["UserId"] = new SelectList(_context.TblUsers, "UserId", "UserId", tblProductReview.UserId);
+            
             return View(tblProductReview);
         }
 
@@ -127,7 +127,7 @@ namespace DoAnNhom6.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ProductId"] = new SelectList(_context.TblProducts, "ProductId", "ProductId", tblProductReview.ProductId);
-            ViewData["UserId"] = new SelectList(_context.TblUsers, "UserId", "UserId", tblProductReview.UserId);
+            
             return View(tblProductReview);
         }
 
@@ -141,7 +141,7 @@ namespace DoAnNhom6.Areas.Admin.Controllers
 
             var tblProductReview = await _context.TblProductReviews
                 .Include(t => t.Product)
-                .Include(t => t.User)
+                
                 .FirstOrDefaultAsync(m => m.ProductReviewId == id);
             if (tblProductReview == null)
             {

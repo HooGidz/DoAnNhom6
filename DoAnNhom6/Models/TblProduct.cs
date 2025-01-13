@@ -38,4 +38,6 @@ public partial class TblProduct
     public virtual ICollection<TblProductReview> TblProductReviews { get; set; } = new List<TblProductReview>();
 
     public virtual ICollection<TblWishList> TblWishLists { get; set; } = new List<TblWishList>();
+
+    
 }

@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using DoAnNhom6.Areas.Admin.Model;
 using DoAnNhom6.Models;
-using DoAnNhom6.Utilities;
 
 namespace DoAnNhom6.Areas.Admin.Controllers
 {

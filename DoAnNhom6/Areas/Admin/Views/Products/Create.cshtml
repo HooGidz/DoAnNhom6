@@ -55,11 +55,10 @@
                                 <div class="form-group">
                                     <label asp-for="Image" class="control-label">Ảnh</label>
                                     <div class="input-group mb-3">
-                                        <div class="input-group-prepend">                                           
-                                            <button type="button" class="btn btn-success" onclick="openDialog()">Chọn ảnh                                                
-                                                </button>
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-success" onclick="openDialog()">Chọn ảnh</button>
                                         </div>
-                                        <input type="text" class="form-control" id="file_input" asp-for="Image" aria-describedby="button-addon2" name="Image" />
+                                        <input type="text" class="form-control" id="file_input" asp-for="Image" aria-describedby="button-addon2" />
                                     </div>
                                     <span asp-validation-for="Image" class="text-danger"></span>
                                 </div>
@@ -90,13 +89,13 @@
                                 </div>
                                 <div class="form-group form-check">
                                     <label asp-for="IsNew" class="form-check-label">
-                                    <input asp-for="IsNew" type="checkbox" class="form-check-input" />SP mới
+                                        <input asp-for="IsNew" type="checkbox" class="form-check-input" />SP mới
                                     </label>
-                                    
+
                                 </div>
                                 <div class="form-group form-check">
                                     <label asp-for="IsBestSeller" class="form-check-label">
-                                    <input asp-for="IsBestSeller" type="checkbox" class="form-check-input" />Bán chạy
+                                        <input asp-for="IsBestSeller" type="checkbox" class="form-check-input" />Bán chạy
                                     </label>
                                 </div>
                                 <div class="form-group">
@@ -106,9 +105,9 @@
                                 </div>
                                 <div class="form-group form-check">
                                     <label asp-for="IsActive" class="form-check-label">
-                                    <input asp-for="IsActive" type="checkbox" class="form-check-input" />Hiện
+                                        <input asp-for="IsActive" type="checkbox" class="form-check-input" />Hiện
                                     </label>
-                                    
+
                                 </div>
                                 <div class="form-group form-check">
                                     <label class="form-check-label">
@@ -130,9 +129,10 @@
 </div>
 
 @{
-    var summerNote = new DoAnNhom6.Areas.Admin.Model.SummerNote("#Detail");
-        <partial name="_SummerNote" model="summerNote"></partial>
+    var summerNote = new DoAnNhom6.Areas.Admin.Models.SummerNote("#Detail");
+    <partial name="_SummerNote" model="summerNote" />
 }
+
 @section Scripts{
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
